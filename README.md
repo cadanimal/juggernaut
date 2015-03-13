@@ -11,7 +11,7 @@ Mais informações devem ser consultadas no riquíssimo [README original](/macca
 - `cadanimal-readme` ‒ rebase do `cadanimal`, para termos este README.md **em português**
 - `cadanimal-deploy-public` ‒ rebase do `cadanimal`, para deploy no Heroku
 - ~~`cadanimal-deploy-private`~~ ‒ quando existe, é rebase do `cadanimal-deploy-public` (ver [#SSL](#SSL))
-- `travisberry` ‒ tem a [cereja escolhida](/ninetwentyfour/juggernaut/commit/a75ccb84b5cef074c8f03feac86c26a28d4ce8d1) que minificou o Javascript para `cadanimal-deploy-public`
+- `travisberry` ‒ tem [cereja escolhida](/ninetwentyfour/juggernaut/commit/a75ccb84b5cef074c8f03feac86c26a28d4ce8d1) que minificou Javascript em `cadanimal-deploy-public`
 
 Tenha em conta que os únicos branches onde preservamos o HEAD são: `master` e `cadanimal`.
 O branch `travisberry` está neste respositório apenas por motivos históricos.
