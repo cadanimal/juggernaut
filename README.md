@@ -23,7 +23,7 @@ git clone git@github.com:cadanimal/juggernaut.git -b cadanimal
 cd juggernaut
 # alterações
 git commit -a -m "DESCRIÇÃO DO COMMIT"
-git checkout -b cadanimal-deploy-public cadanimal/cadanimal-deploy-public
+git checkout -b cadanimal-deploy-public origin/cadanimal-deploy-public
 git rebase cadanimal
 git push heroku HEAD:master  # pressuposto que Heroku Toolbelt está configurado
 ```
