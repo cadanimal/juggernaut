@@ -18,15 +18,38 @@ O branch `travisberry` está neste respositório apenas por motivos históricos.
 
 ## Exemplo de deploy no Heroku
 
+Instruções baseadas no gist [juggernaut_heroku.md](//gist.github.com/maccman/1003748) de Alex MacCaw. Não usamos add-on no Heroku, para não precisarmos "verificar a conta" com um número de cartão de crédito.
+
+1 ‒ Clonar repositório
 ```sh
-git clone git@github.com:cadanimal/juggernaut.git -b cadanimal
+git clone git@github.com:cadanimal/juggernaut.git -b cadanimal-deploy-public
 cd juggernaut
-# alterações
-git commit -a -m "DESCRIÇÃO DO COMMIT"
-git checkout -b cadanimal-deploy-public origin/cadanimal-deploy-public
-git rebase cadanimal
-git push heroku HEAD:master  # pressuposto que Heroku Toolbelt está configurado
 ```
+
+2 ‒ Criar aplicação no Heroku e implantar o código
+```sh
+heroku login
+heroku create nome-da-app --stack cedar
+heroku config:set REDISTOGO_URL=sua-url-do-redistogo
+
+git push heroku HEAD:master  # implantação
+
+heroku ps:scale web=1
+heroku open  # abre o navegador para ver se está funcionando
+```
+
+3 ‒ Realizar alterações e reimplantar
+```sh
+git checkout -b cadanimal origin/cadanimal
+
+# depois de realizar alterações:
+git commit -a -m "DESCRIÇÃO DO COMMIT"
+git checkout cadanimal-deploy-public
+git rebase cadanimal
+git push heroku HEAD:master  # reimplantação
+```
+
+Talvez seja necessário forçar: `git push -f heroku HEAD:master`
 
 ## SSL
 
