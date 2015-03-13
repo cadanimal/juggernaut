@@ -13,6 +13,9 @@ Mais informações devem ser consultadas no riquíssimo [README original](/macca
 - ~~`cadanimal-deploy-private`~~ ‒ quando existe, é rebase do `cadanimal-deploy-public` (ver [#SSL](#SSL))
 - `travisberry` ‒ tem a [cereja escolhida](/ninetwentyfour/juggernaut/commit/a75ccb84b5cef074c8f03feac86c26a28d4ce8d1) que minificou o Javascript para `cadanimal-deploy-public`
 
+Tenha em conta que os únicos branches onde preservamos o HEAD são: `master` e `cadanimal`.
+O branch `travisberry` está neste respositório apenas por motivos históricos.
+
 ## Exemplo de deploy no Heroku
 
 ```sh
